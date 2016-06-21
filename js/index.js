@@ -6,9 +6,9 @@
 	function initSwiper() {
 		var mySwiper = new Swiper ('.swiper-container', {
     		direction: 'horizontal',
-    		loop: true,
+    		loop: false,
     		speed: 3000,
-    		// autoplay: 5000,
+    		autoplay: 2000,
 		});
 	}
 
@@ -578,9 +578,9 @@
 
 
 	function init() {
-		initSwiper();
 		initOtaChart();
 		initErpChart();
+		initSwiper();
 	}
 
 	init();
