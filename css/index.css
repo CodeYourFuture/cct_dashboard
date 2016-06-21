@@ -1,0 +1,150 @@
+.dashboard-ota, .dashboard-erp {
+	display    : flex;
+	width      : 1920px;
+	height     : 1080px;
+	overflow   : hidden;
+	background : url(../img/dashboard_bg.jpg);
+	background-size: 100% 100%;
+}
+
+.panel-item {
+	flex: 1;
+}
+
+/*左边面板*/
+
+.left-panel {
+	padding: 35px 10px 35px 35px;
+}
+
+.left-panel .month-data {
+	height: 580px;
+	width: 100%;
+	color: #fff;
+	background: #1a2432;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.month-amount-label {
+	font-size: 30px;
+	font-weight: 100;
+	padding: 50px 0;
+}
+
+.momth-amount {
+	display: block;
+	font-size: 70px;
+}
+.rate {
+    display: block;
+    font-size: 20px;
+	color: #de503d;
+    padding: 20px;
+}
+
+.left-panel .day-data {
+	height: 410px;
+	width: 100%;
+	background: #1a2432;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.month-order-label{
+    display: block;
+    font-size: 30px;
+    padding-top: 80px;
+    color: #95acbc;
+}
+
+.month-order {
+	display: block;
+	font-size: 70px;
+	padding-top: 50px;
+}
+
+.day-amount-content {
+	float: left;
+	width: 60%;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.store-label {
+	font-size: 30px;
+	color: #fff;
+	padding: 50px 0;
+}
+
+.order-number {
+	font-size: 70px;
+	color: #fff;
+}
+
+.day-order-content {
+	float: left;
+	width: 40%;
+	text-align: center;
+	padding-top: 50px;
+}
+
+/*中间面板*/
+
+.center-panel {
+	padding: 35px 10px 35px 10px;
+}
+
+.center-panel .chart-pv-uv {
+	height: 440px;
+	width: 100%;
+	background: #1a2432;
+	border-radius: 5px;
+}
+
+.center-panel .chart-month-order {
+	height: 550px;
+	width: 100%;
+	background: #1a2432;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+/*右边面板*/
+
+.right-panel {
+	padding: 35px 35px 35px 10px;
+} 
+
+.right-panel .chart-corporation {
+	height: 1010px;
+	width: 100%;
+	background: #1a2432;
+	border-radius: 5px;
+}
+
+/*常用工具样式*/
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
