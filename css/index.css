@@ -43,6 +43,13 @@
     padding: 20px;
 }
 
+.fall-rate {
+	display: block;
+    font-size: 20px;
+	color: #70cd73;
+    padding: 20px;
+}
+
 .left-panel .day-data {
 	height: 410px;
 	width: 100%;

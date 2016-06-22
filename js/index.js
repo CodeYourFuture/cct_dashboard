@@ -368,7 +368,7 @@
             				normal: {
             					show: true,
             					position: "outside",
-            					formatter: "{b} : {c} ({d}%)"
+            					formatter: "￥{c} ({d}%)"
             				}
             			},
             			data:[
