@@ -8,7 +8,7 @@
     		direction: 'horizontal',
     		loop: false,
     		speed: 3000,
-    		autoplay: 2000,
+    		// autoplay: 2000,
 		});
 	}
 
@@ -27,12 +27,12 @@
 			        trigger: 'axis'
 			    },
 			    legend: {
-			        data:['PC-UV','PC-PV','H5-PV','H5-UV'],
+			        data:['PC-PV','PC-UV','H5-PV','H5-UV'],
 			        textStyle: {
 			        	color: '#fff'
 			        },
-			        left: "180px",
-			        top: "22px"
+			        top: "22px",
+			        right: "20px"
 			    },
 			    grid: {
 			        left: '4%',
@@ -49,6 +49,17 @@
 			        	textStyle: {
 			        		color:'#fff'
 			        	}
+			        },
+			        axisLine: {
+			        	lineStyle: {
+			        		color: "#333",
+			        	}
+			        },
+			        splitLine: {
+			        	lineStyle: {
+			        		color: "#333",
+			        		type: "dotted"
+			        	}
 			        }
 			    },
 			    yAxis: {
@@ -57,44 +68,17 @@
 			        	textStyle: {
 			        		color:'#fff'
 			        	}
+			        },
+			        splitLine: {
+			        	lineStyle: {
+			        		color: "#333",
+			        		type: "dotted"
+			        	}
 			        }
 			    },
 			    series: [
-			        {
-			            name:'PC-UV',
-			            type:'line',
-			            stack: '总量',
-			            lineStyle: {
-			            	normal: {
-			            		color: '#62b0d9'
-			            	}
-			            },
-			            data:[120, 132, 101, 134, 90, 230, 210]
-			        },
-			        {
+			    	{
 			            name:'PC-PV',
-			            type:'line',
-			            stack: '总量',
-			            lineStyle: {
-			            	normal: {
-			            		color: '#83d7c0'
-			            	}
-			            },
-			            data:[220, 182, 191, 234, 290, 330, 310]
-			        },
-			        {
-			            name:'H5-UV',
-			            type:'line',
-			            stack: '总量',
-			            lineStyle: {
-			            	normal: {
-			            		color: '#ffc875'
-			            	}
-			            },
-			            data:[150, 232, 201, 154, 190, 330, 410]
-			        },
-			        {
-			            name:'H5-PV',
 			            type:'line',
 			            stack: '总量',
 			            lineStyle: {
@@ -102,7 +86,40 @@
 			            		color: '#ff9f75'
 			            	}
 			            },
+			            data:[220, 182, 191, 234, 290, 330, 310]
+			        },
+			        {
+			            name:'PC-UV',
+			            type:'line',
+			            stack: '总量',
+			            lineStyle: {
+			            	normal: {
+			            		color: '#ffc875'
+			            	}
+			            },
+			            data:[120, 132, 101, 134, 90, 230, 210]
+			        },
+			        {
+			            name:'H5-PV',
+			            type:'line',
+			            stack: '总量',
+			            lineStyle: {
+			            	normal: {
+			            		color: '#62b0d9'
+			            	}
+			            },
 			            data:[320, 332, 301, 334, 390, 330, 320]
+			        },
+			        {
+			            name:'H5-UV',
+			            type:'line',
+			            stack: '总量',
+			            lineStyle: {
+			            	normal: {
+			            		color: '#83d7c0'
+			            	}
+			            },
+			            data:[150, 232, 201, 154, 190, 330, 410]
 			        }
 			    ]
 		};
@@ -113,7 +130,7 @@
 		var otaMonthChart = echarts.init(document.getElementById('ota_month_chart'), 'dark');
 		var OtaMonthOption  = {	
 			    title: {
-			        text: '近30天趋势',
+			        text: '订单近30天趋势',
 			        textStyle: {
 			        	color: '#fff'
 			        },
@@ -129,8 +146,8 @@
 			        textStyle: {
 			        	color: '#fff'
 			        },
-			        left: "180px",
-			        top: "22px"
+			        top: "22px",
+			        right: "20px"
 			    },
 			    grid: {
 			        left: '4%',
@@ -147,6 +164,12 @@
 			        			color:'#fff'
 			        		}
 			        	},
+			        	splitLine: {
+			        		lineStyle: {
+			        			color: "#333",
+			        			type: "dotted"
+			        		}
+			        	},
 			            data: ['5/19','5/20','5/21','5/22','5/23','5/24','5/25','5/26','5/27','5/28','5/29','5/30','5/31','6/1','6/2','6/3','6/4','6/5','6/6','6/7','6/8','6/9','6/10','6/11','6/12','6/13','6/14','6/15','6/16']
 			        }
 			    ],
@@ -156,25 +179,36 @@
 			            // name: '支付订单数',
 			            min: 0,
 			            max: 100,
-			            interval: 10,
+			            interval: 20,
 			            axisLabel: {
 			                formatter: '{value}',
 			                textStyle: {
 			        			color:'#fff'
 			        		}
+			            },
+			            splitLine: {
+			            	lineStyle: {
+			            		color: "#333",
+			            		type: "dotted"
+			            	}
 			            }
 			        },
 			        {
 			            type: 'value',
-			            // name: '支付订单金额',
 			            min: 0,
 			            max: 100,
-			            interval: 10,
+			            interval: 20,
 			            axisLabel: {
 			                formatter: '{value}万',
 			                textStyle: {
 			                	color: "#fff"
 			                }
+			            },
+			            splitLine: {
+			            	lineStyle: {
+			            		color: "#333",
+			            		type: "dotted"
+			            	}
 			            }
 			        }
 			    ],
@@ -212,7 +246,7 @@
 		var otaCorporationOption = {
 		    animation: true,
 		    title: {
-		        text: '康辉各公司数据',
+		        text: '康辉各分公司当月累计订单金额',
 		        textStyle: {
 		        	color: "#fff"
 		        },
@@ -231,7 +265,7 @@
 		        	color:"#fff"
 		        },
 		        top: "25px",
-			    left: "180px"
+			    right: "20px"
 		    },
 		    grid: {
 		        left: '3%',
@@ -250,13 +284,25 @@
 		                textStyle: {
 		                	color: "#fff"
 		                }
-		            }
+		        },
+		        splitLine: {
+		        	lineStyle: {
+		        		color: "#333",
+		        		type: "dotted"
+		        	}
+		        }
 		    },
 		    yAxis: {
 		        type: 'category',
 		        axisLabel: {
 		        	textStyle: {
 		        		color:"#fff"
+		        	}
+		        },
+		        splitLine: {
+		        	lineStyle: {
+		        		color: "#333",
+		        		type: "dotted"
 		        	}
 		        },
 		        data: ['重庆', '广西', '辽宁', '上海', '无锡', '湖南', '浙江', '江苏', '广东', '河北', '河南', '黑龙江', '贵州', '湖南', '北京康辉']
@@ -266,7 +312,10 @@
 		            name: '2016年',
 		            type: 'bar',
 		            barWidth: 20,
-		            data: [38.6543, 78.6543, 83.9325, 283.9325, 442.3438, 542.3438, 673.1000, 832.1594, 1513.4141, 3768.1807, 5882.3438, 6483.1000, 7512.1594, 8213.4141, 9468.1807],
+		            /* TODO
+					 * 保留两位小数
+		             */
+		            data: [38.65, 78.65, 83.93, 283.95, 442.34, 542.34, 673.10, 832.15, 1513.41, 3768.17, 5882.34, 6483.10, 7512.14, 8213.41, 9468.18],
 		            itemStyle: {
 		                normal: {
 		                	color: "#ffc875",
@@ -288,7 +337,7 @@
 		var erpPvChart = echarts.init(document.getElementById('erp_pv_uv'), 'dark');
 		var erpPvOption = {
 				title : {
-        			text: '用户访问来源',
+        			text: '各产品类型当月交易金额',
         			textStyle: {
         				color: "#fff"
         			},
@@ -304,15 +353,24 @@
         			textStyle: {
         				color: "#fff"
         			},
-        			left: "180px",
-        			top: "25px"
+        			right: "20px",
+        			top: "25px",
+        			orient: "vertical"
+
     			},
     			series : [
         			{
-            			name: '访问来源',
+            			name: '各产品类型当月交易金额',
             			type: 'pie',
             			radius : '55%',
             			center: ['50%', '60%'],
+            			label: {
+            				normal: {
+            					show: true,
+            					position: "outside",
+            					formatter: "{b} : {c} ({d}%)"
+            				}
+            			},
             			data:[
                 			{
                 				value:335, 
@@ -404,7 +462,7 @@
 		var erpMonthChart = echarts.init(document.getElementById('erp_month_chart'), 'dark');
 		var erpMonthOption  = {	
 			    title: {
-			        text: '近30天趋势',
+			        text: '订单近30天趋势',
 			        textStyle: {
 			        	color: '#fff'
 			        },
@@ -420,8 +478,8 @@
 			        textStyle: {
 			        	color: '#fff'
 			        },
-			        left: "180px",
-			        top: "22px"
+			        top: "22px",
+			        right: "20px"
 			    },
 			    grid: {
 			        left: '4%',
@@ -438,6 +496,12 @@
 			        			color:'#fff'
 			        		}
 			        	},
+			        	splitLine: {
+			        		lineStyle: {
+			        			color: "#333",
+			        			type: "dotted"
+			        		}
+			        	},
 			            data: ['5/19','5/20','5/21','5/22','5/23','5/24','5/25','5/26','5/27','5/28','5/29','5/30','5/31','6/1','6/2','6/3','6/4','6/5','6/6','6/7','6/8','6/9','6/10','6/11','6/12','6/13','6/14','6/15','6/16']
 			        }
 			    ],
@@ -447,25 +511,36 @@
 			            // name: '支付订单数',
 			            min: 0,
 			            max: 100,
-			            interval: 10,
+			            interval: 20,
 			            axisLabel: {
 			                formatter: '{value}',
 			                textStyle: {
 			        			color:'#fff'
 			        		}
+			            },
+			            splitLine: {
+			            	lineStyle: {
+			            		color: "#333",
+			            		type: "dotted"
+			            	}
 			            }
 			        },
 			        {
 			            type: 'value',
-			            // name: '支付订单金额',
 			            min: 0,
 			            max: 100,
-			            interval: 10,
+			            interval: 20,
 			            axisLabel: {
 			                formatter: '{value}万',
 			                textStyle: {
 			                	color: "#fff"
 			                }
+			            },
+			            splitLine: {
+			            	lineStyle: {
+			            		color: "#333",
+			            		type: "dotted"
+			            	}
 			            }
 			        }
 			    ],
@@ -503,7 +578,7 @@
 	var erpCorporationOption = {
 		    animation: true,
 		    title: {
-		        text: '康辉各公司数据',
+		        text: '康辉各分公司当月累计订单金额',
 		        textStyle: {
 		        	color: "#fff"
 		        },
@@ -521,8 +596,8 @@
 		        textStyle: {
 		        	color:"#fff"
 		        },
-		        top: "25px",
-			    left: "180px"
+		        right: "20px",
+			    top: "22px"
 		    },
 		    grid: {
 		        left: '3%',
@@ -537,17 +612,29 @@
 		        min: 0,
 		        max: 10000,
 		        axisLabel: {
-		                formatter: '{value}万',
-		                textStyle: {
-		                	color: "#fff"
-		                }
+		            formatter: '{value}万',
+		            textStyle: {
+		                color: "#fff"
 		            }
+		        },
+		        splitLine: {
+		        	lineStyle: {
+		        		color: "#333",
+		        		type: "dotted"
+		        	}
+		        }
 		    },
 		    yAxis: {
 		        type: 'category',
 		        axisLabel: {
 		        	textStyle: {
 		        		color:"#fff"
+		        	}
+		        },
+		        splitLine: {
+		        	lineStyle: {
+		        		color: "#333",
+		        		type: "dotted"
 		        	}
 		        },
 		        data: ['重庆', '广西', '辽宁', '上海', '无锡', '湖南', '浙江', '江苏', '广东', '河北', '河南', '黑龙江', '贵州', '湖南', '北京康辉']
@@ -557,7 +644,7 @@
 		            name: '2016年',
 		            type: 'bar',
 		            barWidth: 20,
-		            data: [38.6543, 78.6543, 83.9325, 283.9325, 442.3438, 542.3438, 673.1000, 832.1594, 1513.4141, 3768.1807, 5882.3438, 6483.1000, 7512.1594, 8213.4141, 9468.1807],
+		            data: [38.65, 78.65, 83.93, 283.93, 442.34, 542.34, 673.10, 832.15, 1513.41, 3768.18, 5882.34, 6483.10, 7512.15, 8213.41, 9468.18],
 		            itemStyle: {
 		                normal: {
 		                	color: "#ffc875",
