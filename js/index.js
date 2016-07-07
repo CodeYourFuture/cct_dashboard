@@ -80,19 +80,37 @@
 			    	{
 			            name:'PC-PV',
 			            type:'line',
-			            stack: '总量',
+			            // stack: '总量',
 			            lineStyle: {
 			            	normal: {
 			            		color: '#ff9f75'
 			            	}
 			            },
+			            itemStyle: {
+			            	normal: {
+			            		color: '#ff9f75'
+			            	}
+			            },
+			            // markPoint : {
+			            // 	symbol: 'triangle',
+			            // 	itemStyle: {
+			            // 		normal: {
+			            // 			color: '#000'
+			            // 		}
+			            // 	}
+			            // },
 			            data:[220, 182, 191, 234, 290, 330, 310]
 			        },
 			        {
 			            name:'PC-UV',
 			            type:'line',
-			            stack: '总量',
+			            // stack: '总量',
 			            lineStyle: {
+			            	normal: {
+			            		color: '#ffc875'
+			            	}
+			            },
+			            itemStyle: {
 			            	normal: {
 			            		color: '#ffc875'
 			            	}
@@ -102,8 +120,13 @@
 			        {
 			            name:'H5-PV',
 			            type:'line',
-			            stack: '总量',
+			            // stack: '总量',
 			            lineStyle: {
+			            	normal: {
+			            		color: '#62b0d9'
+			            	}
+			            },
+			            itemStyle: {
 			            	normal: {
 			            		color: '#62b0d9'
 			            	}
@@ -113,13 +136,18 @@
 			        {
 			            name:'H5-UV',
 			            type:'line',
-			            stack: '总量',
+			            // stack: '总量',
 			            lineStyle: {
 			            	normal: {
 			            		color: '#83d7c0'
 			            	}
 			            },
-			            data:[150, 232, 201, 154, 190, 330, 410]
+			            itemStyle: {
+			            	normal: {
+			            		color: '#83d7c0'
+			            	}
+			            },
+			            data:[150, 232, 201, 154, 190, 330, 1300]
 			        }
 			    ]
 		};
