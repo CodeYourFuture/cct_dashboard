@@ -12,22 +12,31 @@
 
 .china-map .time {
 	position: absolute;
-	top:100px;
-	left: 100px;
+	bottom:67px;
+	right: 67px;
 	font-size: 30px;
 	color: #fff;
 	z-index: 1;
+}
+
+#chartTitle {
+	position: absolute;
+	z-index: 1;
+	bottom: 420px;
+	left: 110px;
+	font-size: 30px;
+	color: #fff;
 }
 
 #departureChart {
 	position: absolute;
 	z-index: 1;
 	bottom: 0;
-	left: 50px;
+	left: 100px;
 }
 #destinationChart {
 	position: absolute;
 	z-index: 1;
 	bottom: 0;
-	left: 400px;
+	left: 250px;
 }

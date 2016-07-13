@@ -192,7 +192,7 @@
      {name: '大庆', value: 279}
 ];
 var geoCoordMap = {
-    '海门':[121.15,31.89],
+    '海门':[21.15,21.89],
     '鄂尔多斯':[109.781327,39.608266],
     '招远':[120.38,37.35],
     '舟山':[122.207216,29.985295],
@@ -401,26 +401,22 @@ var convertData = function (data) {
 var chinaMapChart = echarts.init(document.getElementById('chinaMapChart'), 'dark');
 
 var mapOption = {
-    backgroundColor: '#404a59',
+    // backgroundColor: '#404a59',
     title: {
         text: '全国旅游度假出行分布',
-        subtext: 'Data from ERP&OTA',
+        // subtext: 'Data from ERP&OTA',
         left: 'center',
+        top: '60px',
         textStyle: {
-            color: '#fff'
+            color: '#fff',
+            fontSize: '60'
+        },
+        subtextStyle: {
+            fontSize: '30'
         }
     },
     tooltip : {
         trigger: 'item'
-    },
-    legend: {
-        orient: 'vertical',
-        y: 'bottom',
-        x:'right',
-        data:['pm2.5'],
-        textStyle: {
-            color: '#fff'
-        }
     },
     geo: {
         map: 'china',
@@ -429,11 +425,13 @@ var mapOption = {
                 show: false
             }
         },
+        zoom:"1.1",
+        top:'150px',
         roam: true,
         itemStyle: {
             normal: {
-                areaColor: '#323c48',
-                borderColor: '#111'
+                areaColor: '#3d4f68',
+                borderColor: '#4d6586'
             },
             emphasis: {
                 areaColor: '#2a333d'
@@ -442,7 +440,7 @@ var mapOption = {
     },
     series : [
         {
-            name: 'pm2.5',
+            name: '全国旅游度假出行分布',
             type: 'scatter',
             coordinateSystem: 'geo',
             data: convertData(data),
@@ -461,7 +459,7 @@ var mapOption = {
             },
             itemStyle: {
                 normal: {
-                    color: '#ddb926'
+                    color: '#41d1a3'
                 }
             }
         },
@@ -489,7 +487,7 @@ var mapOption = {
             },
             itemStyle: {
                 normal: {
-                    color: '#f4e925',
+                    color: '#41d1a3',
                     shadowBlur: 10,
                     shadowColor: '#333'
                 }
@@ -504,46 +502,36 @@ var departureChart = echarts.init(document.getElementById('departureChart'), 'da
 var departureOption = {
 	animation: true,
 		    title: {
-		        text: '康辉各分公司当月累计订单金额',
+		        text: '出发地',
 		        textStyle: {
-		        	color: "#fff"
+		        	color: "#fc5763"
 		        },
-		        top: "20px",
-			    left: "20px"
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        axisPointer: {
-		            type: 'shadow'
-		        }
-		    },
-		    legend: {
-		        data: ['2016年'],
-		        textStyle: {
-		        	color:"#fff"
-		        },
-		        top: "25px",
-			    right: "20px"
+		        top: "10px",
+			    left: "0px"
 		    },
 		    grid: {
 		        left: '3%',
 		        right: '6%',
-		        top: "70px",
+		        top: "40px",
 		        bottom: '3%',
 		        containLabel: true
 		    },
 		    xAxis: {
 		        type: 'value',
-		        boundaryGap: [0, 0.01],
-		        min: 0,
-		        max: 10000,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show:false
+                }, 		      
 		        axisLabel: {
-		                formatter: '{value}万',
+		                formatter: '',
 		                textStyle: {
 		                	color: "#fff"
 		                }
 		        },
 		        splitLine: {
+                    show:false,
 		        	lineStyle: {
 		        		color: "#333",
 		        		type: "dotted"
@@ -552,12 +540,19 @@ var departureOption = {
 		    },
 		    yAxis: {
 		        type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show:false
+                },  
 		        axisLabel: {
 		        	textStyle: {
 		        		color:"#fff"
 		        	}
 		        },
 		        splitLine: {
+                    show: false,
 		        	lineStyle: {
 		        		color: "#333",
 		        		type: "dotted"
@@ -569,20 +564,15 @@ var departureOption = {
 		        {
 		            name: '2016年',
 		            type: 'bar',
-		            barWidth: 20,
+		            barWidth: 5,
 		            /* TODO
 					 * 保留两位小数
 		             */
 		            data: [38.65, 78.65, 83.93, 283.95, 442.34, 542.34, 673.10, 832.15, 1513.41, 3768.17],
 		            itemStyle: {
 		                normal: {
-		                	color: "#ffc875",
-		                    label: {
-		                        show: true,
-		                        position: 'right',
-		                        formatter: '{c}'
-		                    },
-		                    labelLine: {show: true}
+		                	color: "#fc5763",
+		                    labelLine: {show: false}
 		                }
 		            }
 		        }
@@ -595,90 +585,82 @@ departureChart.setOption(departureOption);
 var destinationChart = echarts.init(document.getElementById('destinationChart'), 'dark');
 var destinationOption = {
 	animation: true,
-		    title: {
-		        text: '康辉各分公司当月累计订单金额',
-		        textStyle: {
-		        	color: "#fff"
-		        },
-		        top: "20px",
-			    left: "20px"
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        axisPointer: {
-		            type: 'shadow'
-		        }
-		    },
-		    legend: {
-		        data: ['2016年'],
-		        textStyle: {
-		        	color:"#fff"
-		        },
-		        top: "25px",
-			    right: "20px"
-		    },
-		    grid: {
-		        left: '3%',
-		        right: '6%',
-		        top: "70px",
-		        bottom: '3%',
-		        containLabel: true
-		    },
-		    xAxis: {
-		        type: 'value',
-		        boundaryGap: [0, 0.01],
-		        min: 0,
-		        max: 10000,
-		        axisLabel: {
-		                formatter: '{value}万',
-		                textStyle: {
-		                	color: "#fff"
-		                }
-		        },
-		        splitLine: {
-		        	lineStyle: {
-		        		color: "#333",
-		        		type: "dotted"
-		        	}
-		        }
-		    },
-		    yAxis: {
-		        type: 'category',
-		        axisLabel: {
-		        	textStyle: {
-		        		color:"#fff"
-		        	}
-		        },
-		        splitLine: {
-		        	lineStyle: {
-		        		color: "#333",
-		        		type: "dotted"
-		        	}
-		        },
-		        data: ['重庆', '广西', '辽宁', '上海', '无锡', '湖南', '浙江', '江苏', '广东', '河北']
-		    },
-		    series: [
-		        {
-		            name: '2016年',
-		            type: 'bar',
-		            barWidth: 20,
-		            /* TODO
-					 * 保留两位小数
-		             */
-		            data: [38.65, 78.65, 83.93, 283.95, 442.34, 542.34, 673.10, 832.15, 1513.41, 3768.17],
-		            itemStyle: {
-		                normal: {
-		                	color: "#ffc875",
-		                    label: {
-		                        show: true,
-		                        position: 'right',
-		                        formatter: '{c}'
-		                    },
-		                    labelLine: {show: true}
-		                }
-		            }
-		        }
-		    ]
+            title: {
+                text: '目的地',
+                textStyle: {
+                    color: "#41d1a3"
+                },
+                top: "10px",
+                left: "0px"
+            },
+            grid: {
+                left: '3%',
+                right: '6%',
+                top: "40px",
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show:false
+                },            
+                axisLabel: {
+                        formatter: '',
+                        textStyle: {
+                            color: "#fff"
+                        }
+                },
+                splitLine: {
+                    show:false,
+                    lineStyle: {
+                        color: "#333",
+                        type: "dotted"
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show:false
+                },  
+                axisLabel: {
+                    textStyle: {
+                        color:"#fff"
+                    }
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: "#333",
+                        type: "dotted"
+                    }
+                },
+                data: ['重庆', '广西', '辽宁', '上海', '无锡', '湖南', '浙江', '江苏', '广东', '河北']
+            },
+            series: [
+                {
+                    name: '2016年',
+                    type: 'bar',
+                    barWidth: 5,
+                    /* TODO
+                     * 保留两位小数
+                     */
+                    data: [38.65, 78.65, 83.93, 283.95, 442.34, 542.34, 673.10, 832.15, 1513.41, 3768.17],
+                    itemStyle: {
+                        normal: {
+                            color: "#41d1a3",
+                            labelLine: {show: false}
+                        }
+                    }
+                }
+            ]
 }
 
 destinationChart.setOption(destinationOption);

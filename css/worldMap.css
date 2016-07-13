@@ -1,0 +1,42 @@
+.world-map {
+	width      : 1920px;
+	height     : 1080px;
+	overflow   : hidden;
+	background : url(../img/dashboard_bg.jpg);
+	background-size: 100% 100%;
+}
+
+.world-map {
+	position: relative;
+}
+
+.world-map .time {
+	position: absolute;
+	bottom:67px;
+	right: 67px;
+	font-size: 30px;
+	color: #fff;
+	z-index: 1;
+}
+
+#chartTitle {
+	position: absolute;
+	z-index: 1;
+	bottom: 420px;
+	left: 110px;
+	font-size: 36px;
+	color: #fff;
+}
+
+#departureChart {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 100px;
+}
+#destinationChart {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 250px;
+}
